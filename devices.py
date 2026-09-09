@@ -25,5 +25,16 @@ def average_temp(devices):
 
     return sum/i
 
+def hottest(devices):
+    #return the whole dictionary of the hottest device
+    max_idx = 0
+    i=0
+
+    for device in devices:
+        if device["temp"] > devices[max_idx]["temp"]: max_idx = i
+        i+=1
+
+    return devices[max_idx]
+
 
 

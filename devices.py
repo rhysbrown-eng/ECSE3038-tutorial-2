@@ -60,3 +60,5 @@ def by_room(devices):
 
     return room_dict
 
+
+print(by_room(readings))

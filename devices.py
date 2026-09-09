@@ -36,5 +36,20 @@ def hottest(devices):
 
     return devices[max_idx]
 
+def to_status(device):
+    #take one device, return a new dictionary
+
+    new_dict = {"device": device["name"]}
+
+    if (device["online"] == True): new_dict["status"] = "online"
+    else: new_dict["status"] = "offline"
+
+    new_dict["celsius"] = device["temp"]
+
+    return new_dict
+
+
+
+
 
 

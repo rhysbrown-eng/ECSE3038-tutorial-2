@@ -39,17 +39,24 @@ def hottest(devices):
 def to_status(device):
     #take one device, return a new dictionary
 
-    new_dict = {"device": device["name"]}
+    status_dict = {"device": device["name"]}
 
-    if (device["online"] == True): new_dict["status"] = "online"
-    else: new_dict["status"] = "offline"
+    if (device["online"] == True): status_dict["status"] = "online"
+    else: status_dict["status"] = "offline"
 
-    new_dict["celsius"] = device["temp"]
+    status_dict["celsius"] = device["temp"]
 
-    return new_dict
-
-
+    return status_dict
 
 
+def by_room(devices):
+    # return a dictionary of room names to lists of device names
 
+    room_dict = {}
+    for device in devices:
+        if (not (device["room"] in room_dict)): room_dict[device["room"]] = []
+
+        room_dict[device["room"]].append(device["name"]) 
+
+    return room_dict
 
